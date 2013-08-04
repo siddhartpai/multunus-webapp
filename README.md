@@ -1,4 +1,6 @@
 multunus-webapp
 ===============
 
-The Twitte Puzzle 
+The Twitter Puzzle 
+Run python run.py to start the application.
+Requires python-flask
