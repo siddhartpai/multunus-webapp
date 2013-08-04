@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Twitter Puzzle</title>
+		<link rel="stylesheet" href="/static/css/style.css">
+		<link rel="canonical" href="http://www.alessioatzeni.com/wp-content/tutorials/jquery/simple-tooltip/index.html" />
+		<script type="text/javascript">
+	$(document).ready(function() {
+		// Tooltip only Text
+		$('.masterTooltip').hover(function(){
+		        // Hover over code
+		        var title = $(this).attr('title');
+		        $(this).data('tipText', title).removeAttr('title');
+		        $('<p class="tooltip"></p>')
+		        .text(title)
+		        .appendTo('body')
+		        .fadeIn('slow');
+		}, function() {
+		        // Hover out code
+		        $(this).attr('title', $(this).data('tipText'));
+		        $('.tooltip').remove();
+		}).mousemove(function(e) {
+		        var mousex = e.pageX + 20; //Get X coordinates
+		        var mousey = e.pageY + 10; //Get Y coordinates
+		        $('.tooltip')
+		        .css({ top: mousey, left: mousex })
+		});
+	});
+	</script>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			
+			<ul class="hover_block">
+				
+				<li>
+					<a href="/index/dhh">
+						<img class="masterTooltip" title="dhh" src="http://a0.twimg.com/profile_images/2556368541/alng5gtlmjhrdlr3qxqv.jpeg" alt="alt" />
+					</a>
+				</li>
+				<li>	
+					<a href="/index/gvanrossum">
+						<img class="masterTooltip" title="gvanrossum" src="http://a0.twimg.com/profile_images/424495004/GuidoAvatar.jpg" alt="alt" />
+					</a>
+				</li>
+				<li>
+					<a href="/index/github">
+						<img class="masterTooltip" title="github" src="http://a0.twimg.com/profile_images/651575553/twittergithub2.png" alt="alt" />
+					</a>
+				</li>
+				<li>
+					<a href="/index/timoreilly">
+						<img class="masterTooltip" title="timoreilly" src="http://a0.twimg.com/profile_images/2823681988/f4f6f2bed8ab4d5a48dea4b9ea85d5f1.jpeg" alt="alt" />
+					</a>
+				</li>
+				<li>
+					<a href="/index/twitter">
+						<img class="masterTooltip" title="twitter" src="http://a0.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx.png" alt="alt" />
+					</a>
+				</li>
+
+				<li>
+					<a href="/index/martinfowler">
+						<img class="masterTooltip" title="martinfowler" src="http://a0.twimg.com/profile_images/79787739/mf-tg-sq.jpg" alt="alt" />
+					</a>
+				</li>
+				<li>
+					<a href="/index/BillGates">
+						<img class="masterTooltip" title="BillGates" src="http://a0.twimg.com/profile_images/1884069342/BGtwitter.JPG" alt="alt" />
+					</a>
+				</li>
+				<li>
+					<a href="/index/spolsky">
+						<img class="masterTooltip" title="spolsky" src="http://a0.twimg.com/profile_images/378800000091193257/fcb03c8d0a40048f2537df967239686f.jpeg" alt="alt" />
+					</a>
+				</li>
+				<li>
+					<a href="/index/firefox">
+						<img class="masterTooltip" title="firefox" src="http://a0.twimg.com/profile_images/378800000226851667/888fa75b513650d2d519fad1c6c9449b.png" alt="alt">
+					</a>
+				</li>
+			</ul> <!-- /ul.hover_block -->
+			
+			<div style="clear:both;"></div>
+			<div id="logo"><img src="/static/images/twitter.png" width="200"></div>
+		</div> <!-- /wrapper -->
+
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+
+ </body>
+</html>

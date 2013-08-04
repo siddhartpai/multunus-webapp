@@ -1,0 +1,27 @@
+import os
+from app import app
+from flask import render_template, send_from_directory ,flash, redirect
+import requester
+from forms import nameForm
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
+@app.route('/index/<scrName>')
+def people(scrName):
+    data=[]
+    data=requester.getData(str(scrName))
+    posts=[]
+    image_url=requester.getImage(str(scrName))
+    for person in data:
+	per={'name':person.name(),'url':person.image(),'followerCount':person.followers()}
+	posts.append(per)
+    return render_template('people.html',title='Twitter Puzzle',posts=posts,image_url=image_url)
+
+@app.route('/')
+@app.route('/index')
+def index():
+	return render_template('index.html')
+
