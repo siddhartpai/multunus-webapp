@@ -14,6 +14,7 @@ def people(scrName):
     data=requester.getData(str(scrName))
     posts=[]
     image_url=requester.getImage(str(scrName))
+    data=data[:10]
     for person in data:
 	per={'name':person.name(),'url':person.image(),'followerCount':person.followers()}
 	posts.append(per)
