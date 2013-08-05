@@ -38,5 +38,16 @@ requester.py --> The Main Man
    getData():
    
       This is the main function of the requester.py file.It returns the details of the people who satisfy the puzzle.
+      
+views.py --> I call it the redirector
+  
+  This file is the controller of logic on the webapp. 
+  
+  
+  The scrName is obtained form the variable in the url /index/<scrName>
+  People(scrName):
+      Retrieves data by calling the functions from requester.py . And sends it to the template People.html .
+      
+  
    
    
